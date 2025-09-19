@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agricultural E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🌾 AgriKart</div>
+    <nav>
+      <ul>
+        <li><a href="index.php" onclick="navigate('home')">Home</a></li>
+        <li><a href="#products" onclick="navigate('products')">Products</a></li>
+        <li><a href="#categories" onclick="navigate('categories')">Categories</a></li>
+        <li><a href="#cart" onclick="navigate('cart')">Cart</a></li>
+        <li><a href="login.php" onclick="navigate('login')">Login</a></li>
+        <li><a href="contact.php" onclick="navigate('contact')">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <form action="search.php" method="GET">
+        <input type="text" name="query" placeholder="Search products...">
+        <button type="submit">🔍</button>
+      </form>
+    </div>
+  </header>
+   <section class="hero">
+    <div class="hero-content">
+      <h1>🌾 Welcome to AgriKart</h1>
+      <p>Your one-stop shop for fresh farm produce, seeds, and agri-products.</p>
+      <button onclick="shopNow()">🛒 Shop Now</button>
+    </div>
+    <div class="hero-image">
+      <img src="farm.jpg" alt="Agricultural Products">
+    </div>
+  </section>
+   <section class="categories">
+    <h2>🌿 Featured Categories</h2>
+    <div class="category-container">
+      <div class="category-card" onclick="viewCategory('fruits.php')">
+        <img src="fresh fruits.jpg" alt="Fruits">
+        <h3>Fresh Fruits</h3>
+      </div>
+      <div class="category-card" onclick="viewCategory('vegetables.php')">
+        <img src="vegetables.jpg" alt="Vegetables">
+        <h3>Vegetables</h3>
+      </div>
+      <div class="category-card" onclick="viewCategory('seeds.php')">
+        <img src="seed.jpg" alt="Seeds">
+        <h3>Seeds</h3>
+      </div>
+      <div class="category-card" onclick="viewCategory('tools.php')">
+        <img src="farming tools.jpg" alt="Farming Tools">
+        <h3>Farming Tools</h3>
+      </div>
+    </div>
+  </section>
+    <section class="bestselling">
+    <h2>🔥 Best Selling Products</h2>
+    <div class="product-container">
+      <?php include 'bestselling_fetch.php'; ?>
+    </div>
+  </section>
+    <section class="features">
+    <h2>🌿 Why Choose Us?</h2>
+    <div class="features-container">
+      <?php include 'features_fetch.php'; ?>
+    </div>
+  </section>
+   <section class="farmers">
+    <h2>👨‍🌾 Meet Our Farmers</h2>
+    <p class="intro">We connect you directly with dedicated farmers who bring fresh, organic produce straight from their fields.</p>
+    <div class="farmers-container">
+      <?php include 'farmers_fetch.php'; ?>
+    </div>
+  </section>
+  <section class="cta-banner">
+    <div class="cta-content">
+      <h2>🌱 Fresh From Farm to Your Home</h2>
+      <p>Buy directly from trusted farmers and enjoy healthy, organic produce.</p>
+      <form method="POST" action="cta_action.php">
+        <button type="submit" name="cta_btn" class="cta-btn">Shop Now</button>
+      </form>
+    </div>
+  </section>
+   <section class="newsletter">
+    <div class="newsletter-content">
+      <h2>📩 Stay Updated with AgriKart</h2>
+      <p>Subscribe to get the latest offers, fresh products & farming news directly to your inbox.</p>
+      <form method="POST" action="newsletter_action.php" class="newsletter-form">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="subscribe-btn">Subscribe</button>
+      </form>
+      <p id="msg"></p>
+    </div>
+  </section>
+   <section class="contact">
+    <h2>📬 Contact Us</h2>
+    <p>Have questions or feedback? Send us a message and we’ll get back to you shortly.</p>
+    <form method="POST" action="contact_action.php" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="contact-btn">Send Message</button>
+    </form>
+    <p id="contact-msg"></p>
+  </section>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>🌾 AgriKart</h3>
+        <p>Fresh farm produce delivered directly from farmers to your home. Organic, healthy, and reliable.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="products.php">Products</a></li>
+          <li><a href="categories.php">Categories</a></li>
+          <li><a href="contact.php">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: support@agrikart.com</p>
+        <p>Phone: +91 9876543210</p>
+        <div class="social-icons">
+          <a href="#"><span>📘</span></a>
+          <a href="#"><span>🐦</span></a>
+          <a href="#"><span>📸</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AgriKart. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
